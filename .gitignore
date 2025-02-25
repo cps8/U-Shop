@@ -1,0 +1,8 @@
+UShop.backend/.vs/
+UShop.backend/UShop.Common/bin/
+UShop.backend/UShop.Common/obj/
+UShop.backend/UShop.UserServer.Api/bin/
+UShop.backend/UShop.UserServer.Api/obj/
+UShop.backend/UShop.UserServer.Service/bin/
+UShop.backend/UShop.UserServer.Service/obj/
+WeChatClient/
