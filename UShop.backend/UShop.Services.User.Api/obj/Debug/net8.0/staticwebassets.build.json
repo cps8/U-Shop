@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Su/IiDjUgcYZNe8SJr+5FJtAuf9kdMrP30NNfK3K0vU=",
+  "Source": "UShop.UserServer.Api",
+  "BasePath": "_content/UShop.UserServer.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

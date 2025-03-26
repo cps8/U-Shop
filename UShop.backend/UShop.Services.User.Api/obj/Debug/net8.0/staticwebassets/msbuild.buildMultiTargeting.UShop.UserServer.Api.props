@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\UShop.UserServer.Api.props" />
+</Project>
