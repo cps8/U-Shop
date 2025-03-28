@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using UShop.Shared.Common;
 using UShop.Shared.Common.ServiceProviderFactorySupport;
 
-namespace UShop.Service.User.Application
+namespace UShop.Services.User.Application
 {
     public interface INotificationService
     {

@@ -7,27 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Model\**" />
-    <Compile Remove="Service\**" />
-    <Content Remove="Model\**" />
-    <Content Remove="Service\**" />
-    <EmbeddedResource Remove="Model\**" />
-    <EmbeddedResource Remove="Service\**" />
-    <None Remove="Model\**" />
-    <None Remove="Service\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.12" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Common\UShop.Shared.Common.csproj" />
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Infrastructure\UShop.Shared.Infrastructure.csproj" />
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Logging\UShop.Shared.Logging.csproj" />
-    <ProjectReference Include="..\UShop.Services.User.Application\UShop.Service.User.Application.csproj" />
+    <ProjectReference Include="..\UShop.Services.User.Application\UShop.Services.User.Application.csproj" />
   </ItemGroup>
 
 </Project>

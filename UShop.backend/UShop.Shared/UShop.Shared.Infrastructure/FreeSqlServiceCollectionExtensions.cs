@@ -12,7 +12,7 @@ namespace UShop.Shared.Infrastructure
         public static void AddFreeSql(this IServiceCollection services, string dbType = "Database:Type", string dbKey = "Database:ConnectionString")
         {
             var connectionString = ConfigUtils.Instance.Get(dbKey);
-            dbType = ConfigUtils.Instance.Get(dbType);
+            dbType = ConfigUtils.Instance.Get(dbType).ToLower();
 
             if (string.IsNullOrWhiteSpace(connectionString) || string.IsNullOrWhiteSpace(dbType))
             {
@@ -37,6 +37,7 @@ namespace UShop.Shared.Infrastructure
             };
 
             services.AddSingleton<IFreeSql>(fsql);
+            //services.AddFreeRepository()
             services.AddScoped<UnitOfWorkManager>(); // 保证事务一致性
         }
     }

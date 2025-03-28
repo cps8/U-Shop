@@ -7,9 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UShop.Service.User", "UShop
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UShop.Shared", "UShop.Shared", "{DDF72614-E5E8-45FE-B0E7-3FF0BDA85041}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Services.User.Api", "UShop.services.User\UShop.Services.User.Api\UShop.Services.User.Api.csproj", "{57B7D49D-6341-488B-B87A-7DB8C6A63780}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Service.User.Application", "UShop.services.User\UShop.Services.User.Application\UShop.Service.User.Application.csproj", "{DED263BD-C3F5-4036-92FC-9E06EBC46CBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Services.User.Application", "UShop.services.User\UShop.Services.User.Application\UShop.Services.User.Application.csproj", "{DED263BD-C3F5-4036-92FC-9E06EBC46CBC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Services.User.Domain", "UShop.services.User\UShop.Services.User.Domain\UShop.Services.User.Domain.csproj", "{C7023DEE-E809-4974-B42C-4722AED69122}"
 EndProject
@@ -19,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Shared.Common", "USho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Shared.Dto", "UShop.Shared\UShop.Shared.Dto\UShop.Shared.Dto.csproj", "{AFAACCE6-8FAD-4470-9EA8-A886A0DC99C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UShop.Shared.Infrastructure", "UShop.Shared\UShop.Shared.Infrastructure\UShop.Shared.Infrastructure.csproj", "{1816F85C-7A11-4E30-8408-2BC0FBC52734}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Shared.Infrastructure", "UShop.Shared\UShop.Shared.Infrastructure\UShop.Shared.Infrastructure.csproj", "{1816F85C-7A11-4E30-8408-2BC0FBC52734}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UShop.Shared.Logging", "UShop.Shared\UShop.Shared.Logging\UShop.Shared.Logging.csproj", "{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Shared.Logging", "UShop.Shared\UShop.Shared.Logging\UShop.Shared.Logging.csproj", "{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UShop.Services.User.Api", "UShop.Services.User\UShop.Services.User.Api\UShop.Services.User.Api.csproj", "{9FF8FC47-E879-443D-888E-12E2B1F6D134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{57B7D49D-6341-488B-B87A-7DB8C6A63780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57B7D49D-6341-488B-B87A-7DB8C6A63780}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57B7D49D-6341-488B-B87A-7DB8C6A63780}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57B7D49D-6341-488B-B87A-7DB8C6A63780}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DED263BD-C3F5-4036-92FC-9E06EBC46CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DED263BD-C3F5-4036-92FC-9E06EBC46CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DED263BD-C3F5-4036-92FC-9E06EBC46CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,12 +57,15 @@ Global
 		{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF8FC47-E879-443D-888E-12E2B1F6D134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF8FC47-E879-443D-888E-12E2B1F6D134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF8FC47-E879-443D-888E-12E2B1F6D134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF8FC47-E879-443D-888E-12E2B1F6D134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{57B7D49D-6341-488B-B87A-7DB8C6A63780} = {7B0E823C-D537-4F1E-8910-499E12BDB428}
 		{DED263BD-C3F5-4036-92FC-9E06EBC46CBC} = {7B0E823C-D537-4F1E-8910-499E12BDB428}
 		{C7023DEE-E809-4974-B42C-4722AED69122} = {7B0E823C-D537-4F1E-8910-499E12BDB428}
 		{E34725C0-4F9F-4E97-9E12-0DED2FCACD29} = {7B0E823C-D537-4F1E-8910-499E12BDB428}
@@ -74,6 +73,7 @@ Global
 		{AFAACCE6-8FAD-4470-9EA8-A886A0DC99C1} = {DDF72614-E5E8-45FE-B0E7-3FF0BDA85041}
 		{1816F85C-7A11-4E30-8408-2BC0FBC52734} = {DDF72614-E5E8-45FE-B0E7-3FF0BDA85041}
 		{F8FE4B6C-3D2E-4B81-91C1-3834BD7DCDEC} = {DDF72614-E5E8-45FE-B0E7-3FF0BDA85041}
+		{9FF8FC47-E879-443D-888E-12E2B1F6D134} = {7B0E823C-D537-4F1E-8910-499E12BDB428}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71156917-4121-43BC-B096-B3E4049CF868}
