@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.PostgreSQL" Version="3.5.200" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Common\UShop.Shared.Common.csproj" />
     <ProjectReference Include="..\UShop.Services.User.Domain\UShop.Services.User.Domain.csproj" />
   </ItemGroup>
