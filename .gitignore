@@ -6,3 +6,14 @@ UShop.backend/UShop.UserServer.Api/obj/
 UShop.backend/UShop.UserServer.Service/bin/
 UShop.backend/UShop.UserServer.Service/obj/
 WeChatClient/
+UShop.backend/UShop.services.User/UShop.Services.User.Api/bin/
+UShop.backend/UShop.services.User/UShop.Services.User.Api/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Application/bin/
+UShop.backend/UShop.services.User/UShop.Services.User.Application/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Domain/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Infrastructure/obj/
+UShop.backend/UShop.Shared/UShop.Shared.Common/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Common/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Domain/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Dto/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Dto/
