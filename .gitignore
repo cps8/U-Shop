@@ -10,10 +10,15 @@ UShop.backend/UShop.services.User/UShop.Services.User.Api/bin/
 UShop.backend/UShop.services.User/UShop.Services.User.Api/obj/
 UShop.backend/UShop.services.User/UShop.Services.User.Application/bin/
 UShop.backend/UShop.services.User/UShop.Services.User.Application/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Domain/bin/
 UShop.backend/UShop.services.User/UShop.Services.User.Domain/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Infrastructure/bin/
 UShop.backend/UShop.services.User/UShop.Services.User.Infrastructure/obj/
 UShop.backend/UShop.Shared/UShop.Shared.Common/bin/
 UShop.backend/UShop.Shared/UShop.Shared.Common/obj/
-UShop.backend/UShop.services.User/UShop.Services.User.Domain/bin/
 UShop.backend/UShop.Shared/UShop.Shared.Dto/bin/
-UShop.backend/UShop.Shared/UShop.Shared.Dto/
+UShop.backend/UShop.Shared/UShop.Shared.Dto/obj/
+UShop.backend/UShop.Shared/UShop.Shared.Logging/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Logging/obj/
+UShop.backend/UShop.Shared/UShop.Shared.Infrastructure/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Infrastructure/obj/

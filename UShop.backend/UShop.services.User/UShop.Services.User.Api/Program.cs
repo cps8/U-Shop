@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using UShop.Shared.Common.ServiceProviderFactorySupport;
 using UShop.Shared.Common;
+using UShop.Shared.Infrastructure;
+using UShop.Shared.Logging;
 
 namespace UShop.Services.User.Api
 {
@@ -29,6 +31,8 @@ namespace UShop.Services.User.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // 注册日志
+            builder.Services.AddLoggingServices();
 
             // 替换默认的 ServiceProviderFactory 为 Autofac。
             builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -77,6 +81,9 @@ namespace UShop.Services.User.Api
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(ConfigUtils.Instance.Get("Token:SecretKey")))
                     };
                 });
+
+            // 注册FreeSql
+            builder.Services.AddFreeSql();
 
             builder.Services.AddHttpContextAccessor();
 
