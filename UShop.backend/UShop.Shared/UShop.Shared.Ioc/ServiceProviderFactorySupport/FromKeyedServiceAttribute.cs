@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UShop.Shared.Common.ServiceProviderFactorySupport
+namespace UShop.Shared.Ioc.ServiceProviderFactorySupport
 {
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false)]
     public class FromKeyedServiceAttribute : Attribute

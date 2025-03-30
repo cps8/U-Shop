@@ -1,7 +1,8 @@
-﻿using Autofac;
+﻿
 using Microsoft.AspNetCore.Http;
 using UShop.Shared.Common;
-using UShop.Shared.Common.ServiceProviderFactorySupport;
+using UShop.Shared.Ioc.ServiceProviderFactorySupport;
+
 
 namespace UShop.Services.User.Application
 {

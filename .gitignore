@@ -22,3 +22,8 @@ UShop.backend/UShop.Shared/UShop.Shared.Logging/bin/
 UShop.backend/UShop.Shared/UShop.Shared.Logging/obj/
 UShop.backend/UShop.Shared/UShop.Shared.Infrastructure/bin/
 UShop.backend/UShop.Shared/UShop.Shared.Infrastructure/obj/
+UShop.backend/UShop.Shared/UShop.Shared.Autofac/obj/
+UShop.backend/UShop.Shared/UShop.Shared.IdGenerator/bin/
+UShop.backend/UShop.Shared/UShop.Shared.IdGenerator/obj/
+UShop.backend/UShop.Shared/UShop.Shared.Ioc/bin/
+UShop.backend/UShop.Shared/UShop.Shared.Ioc/obj/

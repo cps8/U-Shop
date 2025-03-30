@@ -23,12 +23,14 @@ namespace UShop.Shared.Infrastructure
             {
                 "postgresql" => new FreeSqlBuilder()
                     .UseConnectionString(FreeSql.DataType.PostgreSQL, connectionString)
+                    .UseNameConvert(FreeSql.Internal.NameConvertType.PascalCaseToUnderscoreWithLower)
                     .UseGenerateCommandParameterWithLambda(true)
                     .UseAutoSyncStructure(false) // 自动同步实体结构到数据库，只有CRUD时才会生成表, 不建议开启，生产环境严禁开启
                     .Build(),
 
                 "mysql" => new FreeSqlBuilder()
                     .UseConnectionString(FreeSql.DataType.MySql, connectionString)
+                    .UseNameConvert(FreeSql.Internal.NameConvertType.PascalCaseToUnderscoreWithLower)
                     .UseGenerateCommandParameterWithLambda(true)
                     .UseAutoSyncStructure(false) // 自动同步实体结构到数据库，只有CRUD时才会生成表, 不建议开启，生产环境严禁开启
                     .Build(),
@@ -37,8 +39,16 @@ namespace UShop.Shared.Infrastructure
             };
 
             services.AddSingleton<IFreeSql>(fsql);
+
+            fsql.Aop.CommandBefore += Aop_CommandBefore;
+
             //services.AddFreeRepository()
             services.AddScoped<UnitOfWorkManager>(); // 保证事务一致性
+        }
+
+        private static void Aop_CommandBefore(object? sender, FreeSql.Aop.CommandBeforeEventArgs e)
+        {
+            
         }
     }
 }

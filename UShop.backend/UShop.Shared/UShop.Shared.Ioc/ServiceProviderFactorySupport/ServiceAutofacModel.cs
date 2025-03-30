@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UShop.Shared.Common.ServiceProviderFactorySupport
+namespace UShop.Shared.Ioc.ServiceProviderFactorySupport
 {
     public class ServiceAutofacModel : Autofac.Module
     {

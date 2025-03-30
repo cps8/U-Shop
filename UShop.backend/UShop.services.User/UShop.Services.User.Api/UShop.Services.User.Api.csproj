@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Common\UShop.Shared.Common.csproj" />
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Infrastructure\UShop.Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Ioc\UShop.Shared.Ioc.csproj" />
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Logging\UShop.Shared.Logging.csproj" />
     <ProjectReference Include="..\UShop.Services.User.Application\UShop.Services.User.Application.csproj" />
   </ItemGroup>

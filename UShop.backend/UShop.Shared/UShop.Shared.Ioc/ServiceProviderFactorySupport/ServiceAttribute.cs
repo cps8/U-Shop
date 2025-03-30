@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UShop.Shared.Common.ServiceProviderFactorySupport
+namespace UShop.Shared.Ioc.ServiceProviderFactorySupport
 {
     /// <summary>
     /// 特性，用于标注为由CI管理依赖注入的类
