@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UShop.Services.User.Application.System.Dto;
+using UShop.Services.User.Application.System.Vo;
+using UShop.Shared.Dto;
 
 namespace UShop.Services.User.Application.System
 {
     public interface ISystemService
     {
-        Task<bool> Login(LoginDto dto);
+        Task<ResultModel<LoginVo>> Login(LoginDto dto);
     }
 }

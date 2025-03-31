@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UShop.Services.User.Domain.Account;
+using UShop.Services.User.Domain.Repositories;
 using UShop.Shared.Ioc.ServiceProviderFactorySupport;
 
 namespace UShop.Services.User.Infrastructure.Account
@@ -16,9 +16,15 @@ namespace UShop.Services.User.Infrastructure.Account
         {
             _db = db;
         }
-        public async Task<Domain.Account.Account?> Get(string name, string password)
+        public async Task<Domain.AggregateRoots.Account?> GetByName(string name)
         {
-            return await _db.Select<Domain.Account.Account>().Where(a=> a.Name == name && a.Password == password).FirstAsync();
+            return await _db.Select<Domain.AggregateRoots.Account>().Where(a=> a.Name == name).FirstAsync();
+        }
+
+        public async Task<bool> Update(Domain.AggregateRoots.Account account)
+        {
+            int row = await _db.Update<Domain.AggregateRoots.Account>(account).ExecuteAffrowsAsync();
+            return row > 0;
         }
     }
 }

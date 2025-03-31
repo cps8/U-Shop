@@ -27,3 +27,6 @@ UShop.backend/UShop.Shared/UShop.Shared.IdGenerator/bin/
 UShop.backend/UShop.Shared/UShop.Shared.IdGenerator/obj/
 UShop.backend/UShop.Shared/UShop.Shared.Ioc/bin/
 UShop.backend/UShop.Shared/UShop.Shared.Ioc/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.MSTest/bin/
+UShop.backend/UShop.services.User/UShop.Services.User.MSTest/obj/
+UShop.backend/UShop.services.User/UShop.Services.User.Test/obj/

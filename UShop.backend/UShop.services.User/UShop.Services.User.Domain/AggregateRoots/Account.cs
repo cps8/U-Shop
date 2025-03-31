@@ -1,24 +1,26 @@
 ﻿using UShop.Shared.IdGenerator;
 using FreeSql.DataAnnotations;
+using UShop.Services.User.Domain.Base;
 
-namespace UShop.Services.User.Domain.Account;
+namespace UShop.Services.User.Domain.AggregateRoots;
 
 /// <summary>
 /// 账号
 /// </summary>
-public class Account
+public class Account : IAggregateRoot, IDeleted, ICreated, ILastUpdated
 {
     public long Id { get; private set; }
+    public bool IsDeleted { get; private set; }
     public string Name { get; private set; }
     public string Password { get; private set; }
-    public string Phone { get; private set; }
-    public string Avatar { get; private set; }
+    public string? Phone { get; private set; }
+    public string? Avatar { get; private set; }
     public bool Disabled { get; private set; }
     public DateTime? DisabledTime { get; private set; }
-    public string DisabledReason { get; private set; }
-    public string CreatedBy { get; private set; }
+    public string? DisabledReason { get; private set; }
+    public long CreatedBy { get; private set; }
     public DateTime CreatedAt { get; private set; }
-    public string LastUpdatedBy { get; private set; }
+    public long LastUpdatedBy { get; private set; }
     public DateTime LastUpdatedAt { get; private set; }
 
     private Account() { }
@@ -53,4 +55,8 @@ public class Account
         DisabledReason = reason;
     }
 
+    public void Delete()
+    {
+        IsDeleted = true;
+    }
 }

@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using UShop.Services.User.Application.System;
 using UShop.Services.User.Application.System.Dto;
+using UShop.Services.User.Application.System.Vo;
+using UShop.Shared.Dto;
 
 namespace UShop.Services.User.Api.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("user/[controller]/[action]")]
     [ApiController]
     public class SystemController : ControllerBase
     {
@@ -15,7 +17,8 @@ namespace UShop.Services.User.Api.Controllers
         }
 
         [HttpPost]
-        public Task<bool> Login(LoginDto dto)
+        [Route("/user/login")]
+        public Task<ResultModel<LoginVo>> Login(LoginDto dto)
         { 
             return _service.Login(dto);
         }
