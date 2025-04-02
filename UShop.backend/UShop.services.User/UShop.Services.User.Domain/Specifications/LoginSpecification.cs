@@ -31,7 +31,7 @@ namespace UShop.Services.User.Domain.Specifications
         /// </summary>
         /// <returns></returns>
         public (bool value, string? reason, DateTime? time) IsDisable() {
-            bool value = _account.Disabled == true;
+            bool value = _account.IsDisabled == true;
             return (value, _account.DisabledReason, _account.DisabledTime);
         }
     }

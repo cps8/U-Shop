@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UShop.Shared.IdGenerator
 {
-    public interface ISnowflakeIdGeneratorService
+    public interface IIdGeneratorService
     {
         /// <summary>
         /// 生成雪花id

@@ -12,18 +12,19 @@ namespace UShop.Services.User.Domain.Repositories
     /// </summary>
     public interface IAccountRepository
     {
+        Task<Account?> GetByIdAsync(long id);
         /// <summary>
         /// 根据用户名获取用户
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Task<Account?> GetByName(string name);
+        Task<Account?> GetByNameAsync(string name);
 
         /// <summary>
         /// 修改
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        Task<bool> Update(Account account);
+        Task<bool> UpdateAsync(Account account);
     }
 }

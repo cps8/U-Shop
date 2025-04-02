@@ -13,12 +13,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Common\UShop.Shared.Common.csproj" />
     <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.IdGenerator\UShop.Shared.IdGenerator.csproj" />
+    <ProjectReference Include="..\..\UShop.Shared\UShop.Shared.Ioc\UShop.Shared.Ioc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="ValueObjects\" />
-    <Folder Include="Services\" />
     <Folder Include="Events\" />
     <Folder Include="Factories\" />
   </ItemGroup>

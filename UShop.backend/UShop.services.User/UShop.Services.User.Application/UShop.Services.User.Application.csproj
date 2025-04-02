@@ -14,4 +14,8 @@
     <ProjectReference Include="..\UShop.Services.User.Infrastructure\UShop.Services.User.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Menu\Dto\" />
+  </ItemGroup>
+
 </Project>

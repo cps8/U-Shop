@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UShop.Shared.IdGenerator
 {
-    public static class CExtensions
+    public static class SnowflakeIdGeneratorExtensions
     {
         /// <summary>
         /// 添加SnowflakeIdGenerator依赖
@@ -17,7 +17,7 @@ namespace UShop.Shared.IdGenerator
         /// <param name="datacenterId"></param>
         public static void AddSnowflakeIdGenerator(this IServiceCollection services, int worderId = 1, int datacenterId = 1)
         {
-            services.AddSingleton<ISnowflakeIdGeneratorService>(new SnowflakeIdGeneratorService(worderId, datacenterId));
+            services.AddSingleton<IIdGeneratorService>(new SnowflakeIdGeneratorService(worderId, datacenterId));
         }
     }
 }

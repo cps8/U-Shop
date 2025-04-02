@@ -28,7 +28,7 @@
             return new ResultModel<T>(0, message, default);
         }
 
-        public static ResultModel<T> Failed(int code, string message = "请求成功")
+        public static ResultModel<T> Failed(int code, string message = "请求失败")
         {
             return new ResultModel<T>(code, message, default);
         }

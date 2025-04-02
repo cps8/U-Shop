@@ -39,5 +39,40 @@ namespace UShop.Shared.Ioc
             });
         }
 
+        public static IHostBuilder UseAutofac(this IHostBuilder host, Type controllerType, Action<ContainerBuilder> action)
+        {
+            host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+            return host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+            {
+                // 扩展
+                action(containerBuilder);
+
+                // 监听 Controller 创建时的生命周期，并解析 `FromKeyedService`
+                containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+                    .Where(t => controllerType.IsAssignableFrom(t)) // 仅注册 Controller
+                    .WithParameter(new ResolvedParameter(
+                        (pi, ctx) => pi.GetCustomAttribute<FromKeyedServiceAttribute>() != null,
+                        (pi, ctx) =>
+                        {
+                            try
+                            {
+                                var attr = pi.GetCustomAttribute<FromKeyedServiceAttribute>();
+                                if (pi.ParameterType.IsGenericType &&
+                                    pi.ParameterType.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                                {
+                                    var elementType = pi.ParameterType.GetGenericArguments()[0];
+                                    return ctx.ResolveKeyed(attr.Keyed, typeof(IEnumerable<>).MakeGenericType(elementType));
+                                }
+                                return ctx.ResolveKeyed(attr.Keyed, pi.ParameterType);
+                            }
+                            catch (DependencyResolutionException e)
+                            {
+                                throw new DependencyResolutionException($"`{pi.ParameterType.FullName}` 似乎没有继承接口 ==>", e);
+                            }
+                        }
+                    ))
+                    .PropertiesAutowired(); // 确保所有依赖都能正确注入
+            });
+        }
     }
 }

@@ -9,8 +9,10 @@ using NLog;
 using System.Reflection;
 using System.Text;
 using UShop.Shared.Common;
+using UShop.Shared.IdGenerator;
 using UShop.Shared.Infrastructure;
 using UShop.Shared.Ioc;
+using UShop.Shared.Ioc.ServiceProviderFactorySupport;
 using UShop.Shared.Logging;
 
 namespace UShop.Services.User.Api;
@@ -43,12 +45,23 @@ public class Program
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            // 引入雪花id算法服务
+            builder.Services.AddSnowflakeIdGenerator();
+
             // 注册日志
             builder.Host.UseNLogLogging();
             builder.Services.AddLoggingServices();
 
             // 替换默认的 ServiceProviderFactory 为 Autofac。
-            builder.Host.UseAutofac(typeof(ControllerBase), Assembly.Load("UShop.Services.User.Application"), Assembly.Load("UShop.Services.User.Infrastructure"));
+            builder.Host.UseAutofac(typeof(ControllerBase), (containerBuilder) => {
+                containerBuilder.RegisterModule(
+                    new ServiceAutofacModel(
+                        Assembly.Load("UShop.Services.User.Application"),
+                        Assembly.Load("UShop.Services.User.Domain"),
+                        Assembly.Load("UShop.Services.User.Infrastructure")
+                        )
+                    ); // 指定程序集
+            });
             logger.Info("Ioc done");
 
             // 注册jwt服务
@@ -72,7 +85,7 @@ public class Program
             logger.Info("jwt done");
 
             // 注册FreeSql
-            builder.Services.AddFreeSql();
+            builder.Services.AddFreeSql("Database:Type", "Database:ConnectionString", Assembly.Load("UShop.Services.User.Infrastructure"));
             logger.Info("orm done");
 
             builder.Services.AddHttpContextAccessor();

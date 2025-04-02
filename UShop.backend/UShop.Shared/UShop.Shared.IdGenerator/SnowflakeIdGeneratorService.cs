@@ -1,6 +1,6 @@
 ﻿namespace UShop.Shared.IdGenerator
 {
-    public class SnowflakeIdGeneratorService:ISnowflakeIdGeneratorService
+    public class SnowflakeIdGeneratorService:IIdGeneratorService
     {
         private const long Epoch = 1735660800000L; // 2023-01-01 00:00:00 UTC
         private const int WorkerIdBits = 5;

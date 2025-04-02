@@ -94,16 +94,23 @@ namespace UShop.Shared.Ioc.ServiceProviderFactorySupport
                     (pi, context) => pi.GetCustomAttribute<FromKeyedServiceAttribute>() != null,
                     (pi, context) =>
                     {
-                        //var attr = pi.GetCustomAttribute<FromKeyedServiceAttribute>();
-                        //return context.ResolveKeyed(attr.Keyed, pi.ParameterType);
-                        var attr = pi.GetCustomAttribute<FromKeyedServiceAttribute>();
-                        if (pi.ParameterType.IsGenericType &&
-                            pi.ParameterType.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                        try
                         {
-                            var elementType = pi.ParameterType.GetGenericArguments()[0];
-                            return ctx.ResolveKeyed(attr.Keyed, typeof(IEnumerable<>).MakeGenericType(elementType));
+                            //var attr = pi.GetCustomAttribute<FromKeyedServiceAttribute>();
+                            //return context.ResolveKeyed(attr.Keyed, pi.ParameterType);
+                            var attr = pi.GetCustomAttribute<FromKeyedServiceAttribute>();
+                            if (pi.ParameterType.IsGenericType &&
+                                pi.ParameterType.GetGenericTypeDefinition() == typeof(IEnumerable<>))
+                            {
+                                var elementType = pi.ParameterType.GetGenericArguments()[0];
+                                return ctx.ResolveKeyed(attr.Keyed, typeof(IEnumerable<>).MakeGenericType(elementType));
+                            }
+                            return ctx.ResolveKeyed(attr.Keyed, pi.ParameterType);
                         }
-                        return ctx.ResolveKeyed(attr.Keyed, pi.ParameterType);
+                        catch (DependencyResolutionException e)
+                        {
+                            throw new DependencyResolutionException($"`{pi.ParameterType.FullName}` 似乎没有继承接口 ==>", e);
+                        }
                     });
             }).As<Parameter>();
         }
